@@ -1,0 +1,17 @@
+{
+  "name": "smart-hub",
+  "version": "1.0.0",
+  "description": "Smart Hub Server",
+  "main": "lib/server.js",
+  "scripts": {
+    "start": "node lib/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mqtt": "~1.6.3"
+  },
+  "author": {
+    "name": "John Petrocik"
+  },
+  "license": "MIT"
+}

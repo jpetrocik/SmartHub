@@ -1,0 +1,9 @@
+{
+   	"house/livingroom/movie/command":{
+  		"messages": {
+  			"house/livingroom/ceiling/command":"0",
+     		"house/livingroom/lamp/command":"1"
+ 		},
+    	"status":"house/livingroom/movie/status"
+   }
+}
