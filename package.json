@@ -10,7 +10,9 @@
   "dependencies": {
     "debug": "^4.1.0",
     "mqtt": "^2.18.8",
-    "request": "^2.88.0"
+    "node-x10-comm": "^1.2.1",
+    "request": "^2.88.0",
+    "serialport": "^7.0.2"
   },
   "author": {
     "name": "John Petrocik"
