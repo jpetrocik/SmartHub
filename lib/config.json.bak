@@ -1,0 +1,31 @@
+{
+  "mqttServerUrl": "tcp://hermes.petrocik.net:1883",
+  "pseduo": {
+    "house/livingroom/movie/command": {
+      "messages": {
+        "house/livingroom/ceiling/command": "0",
+        "house/livingroom/lamp/command": "1"
+      },
+      "status": "house/livingroom/movie/status"
+    }
+  },
+  "sunset": {
+  	"lat":"33.806286",
+  	"lon":"-118.127506"
+  },
+  "x10": {
+    "serialPort": "/dev/ttyS0",
+    "topics": {
+      "house/livingroom/ceiling/command": {
+        "house": "G",
+        "module": "1",
+        "status": "house/livingroom/ceiling/status"
+      },
+      "house/outside/landscaping/command": {
+        "house": "G",
+        "module": "2",
+        "status": "house/outside/landscaping/status"
+      }
+    }
+  }
+}
