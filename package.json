@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "mqtt": "~1.6.3"
+    "debug": "^4.1.0",
+    "mqtt": "^2.18.8",
+    "request": "^2.88.0"
   },
   "author": {
     "name": "John Petrocik"
