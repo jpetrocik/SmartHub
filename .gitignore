@@ -57,4 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
->>>>>>> a072b8d50a3bd6cbb7cadb2a31292c4b8894aa73
+config.json

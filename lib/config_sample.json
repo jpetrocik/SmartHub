@@ -1,5 +1,5 @@
 {
-  "mqttServerUrl": "tcp://hermes.petrocik.net:1883",
+  "mqttServerUrl": "tcp://mqtt.local:1883",
   "pseduo": {
     "house/livingroom/movie/command": {
       "messages": {
