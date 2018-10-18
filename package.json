@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "cron": "^1.4.1",
     "debug": "^4.1.0",
     "mqtt": "^2.18.8",
     "node-x10-comm": "file:../../home/john/Development/node-x10-comm",
