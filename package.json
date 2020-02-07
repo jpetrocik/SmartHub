@@ -16,6 +16,7 @@
     "express": "^4.16.4",
     "lgtv2": "file:../lgtv2",
     "mqtt": "^2.18.8",
+    "mysql": "^2.18.1",
     "node-wol": "^0.1.1",
     "node-x10-comm": "file:../../home/john/Development/node-x10-comm",
     "request": "^2.88.0"
