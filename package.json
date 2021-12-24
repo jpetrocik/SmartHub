@@ -12,14 +12,14 @@
     "cron": "^1.4.1",
     "debug": "^4.1.0",
     "didyoumean2": "^2.0.4",
-    "eiscp": "file:/home/john/Development/node-eiscp",
+    "eiscp": "file:/home/john/Development/personal/node-eiscp",
     "express": "^4.16.4",
+    "firebase-admin": "^10.0.1",
     "lgtv2": "file:/home/john/Development/lgtv2",
-    "mqtt": "^2.18.8",
+    "mqtt": "^4.3.0",
     "mysql": "^2.18.1",
     "node-wol": "^0.1.1",
     "plivo": "^4.12.0",
-    "node-x10-comm": "file:/home/john/Development/node-x10-comm",
     "request": "^2.88.0"
   },
   "author": {
