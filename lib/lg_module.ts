@@ -22,8 +22,12 @@ export class LgWebOSModule {
 	connected = false;
 	reties: 0;
 
-	constructor(config: any) {
-		this.config = config;
+	constructor() {
+		this.config = global.SmartHub.config.lg;
+
+		console.log("Subscribing to " + this.config.topic);
+		global.SmartHub.mqttClient.subscribe(this.config.topic + "/#");
+		global.SmartHub.mqttClient.on('message', this.onMessage.bind(this));
 	}
 
 	connect() {
@@ -145,23 +149,11 @@ export class LgWebOSModule {
 		return this.sendCommand("system.launcher/launch", { id: input }, true);
 	}
 
-	subscribe() {
-		console.log("Subscribing to " + this.config.topic);
-		global.SmartHub.mqttClient.subscribe(this.config.topic + "/#");
-		global.SmartHub.mqttClient.on('message', this.onMessage.bind(this));
-	}
-
 	onMessage(topic: any, message: any) {
 		if (topic.startsWith(this.config.topic)) {
 			console.log("Message recieved on " + topic);
 			var command = topic.replace(this.config.topic + "/", "");
 			this.sendCommand(command, JSON.parse(message));
 		}
-	}
-
-	static init() {
-		let lgWebOSModule = new LgWebOSModule(global.SmartHub.config.lg);
-		lgWebOSModule.subscribe();
-		return lgWebOSModule;
 	}
 }

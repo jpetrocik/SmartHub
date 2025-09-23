@@ -36,7 +36,7 @@ class SmartHub {
 		this.modules['scheduleModule'] = ScheduleModule.init();
 		this.modules['pseudoModule'] = await PseudoModule.init();
 		this.modules['notificationModule'] = await NotificationModule.init();
-		this.modules['lgTvModule'] = LgWebOSModule.init();
+		this.modules['lgTvModule'] = new LgWebOSModule();
 		this.modules['onkyoModule'] = await OnkyoModule.init();
 		this.modules['mythTvModule'] = await MythTvModule.init();
 		this.modules['pirModule'] = await PirModule.init();
