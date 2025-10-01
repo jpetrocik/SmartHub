@@ -16,6 +16,7 @@ import PirModule from './pir_module.js';
 import PlivoModule from './plivo_module.js';
 import FirebaseModule from './firebase_module.js';
 import MacModule from './mac_module.js';
+import { BridgeTopicModule } from './bridge_topic_module';
 
 
 class SmartHub {
@@ -32,17 +33,18 @@ class SmartHub {
 		this.mqttClient = await this.connectToMqtt();
 		this.express = await this.startExpress();
 
-		this.modules['sunsetModule'] = await SunsetModule.init();
-		this.modules['scheduleModule'] = ScheduleModule.init();
-		this.modules['pseudoModule'] = await PseudoModule.init();
-		this.modules['notificationModule'] = await NotificationModule.init();
-		this.modules['lgTvModule'] = new LgWebOSModule();
-		this.modules['onkyoModule'] = await OnkyoModule.init();
-		this.modules['mythTvModule'] = await MythTvModule.init();
-		this.modules['pirModule'] = await PirModule.init();
-		this.modules['plivoModule'] = await PlivoModule.init();
-		this.modules['firebaseModule'] = await FirebaseModule.init();
-		this.modules['macModule'] = await MacModule.init();
+		await SunsetModule.init();
+		ScheduleModule.init();
+		await PseudoModule.init();
+		await NotificationModule.init();
+		LgWebOSModule.init();
+		await OnkyoModule.init();
+		await MythTvModule.init();
+		await PirModule.init();
+		await PlivoModule.init();
+		await FirebaseModule.init();
+		await MacModule.init();
+		BridgeTopicModule.init();
 	}
 
 	connectToDatabase() {
@@ -51,7 +53,7 @@ class SmartHub {
 	};
 
 	connectToMqtt() {
-		let mqttServerUrl = this.config.mqttServerUrl;
+		let mqttServerUrl = this.config.mqtt.serverUrl;
 
 		let mqttOptions;
 		// if (mqttServerUrl.indexOf('mqtts') > -1) {
