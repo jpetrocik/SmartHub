@@ -16,6 +16,7 @@ import PirModule from './pir_module.js';
 import PlivoModule from './plivo_module.js';
 import FirebaseModule from './firebase_module.js';
 import MacModule from './mac_module.js';
+import TPLinkModule from './tplink_module.js';
 import { BridgeTopicModule } from './bridge_topic_module';
 
 
@@ -44,6 +45,7 @@ class SmartHub {
 		await PlivoModule.init();
 		await FirebaseModule.init();
 		await MacModule.init();
+		await TPLinkModule.init();
 		BridgeTopicModule.init();
 	}
 
