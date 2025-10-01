@@ -17,13 +17,13 @@ import LGTV from 'lgtv2';
  **/
 export class LgWebOSModule {
 
-	config: any;
+	config: LGConfig;
 	lgtv!: LGTV;
 	connected = false;
 	reties: 0;
 
-	constructor() {
-		this.config = global.SmartHub.config.lg;
+	constructor(config: LGConfig) {
+		this.config = config;
 
 		console.log("Subscribing to " + this.config.topic);
 		global.SmartHub.mqttClient.subscribe(this.config.topic + "/#");
@@ -156,4 +156,21 @@ export class LgWebOSModule {
 			this.sendCommand(command, JSON.parse(message));
 		}
 	}
+
+	static init() {
+		if (!global.SmartHub.config.lg || (global.SmartHub.config.lg as LGConfig[]).length === 0) {
+			console.log("No LG TV configuration found");
+			return;
+		}
+
+		(global.SmartHub.config.lg as LGConfig[]).forEach((config) => {
+			new LgWebOSModule(config);
+		});
+	}
+}
+
+interface LGConfig {
+	topic: string;
+	address: string;
+	macAddress: string;
 }
