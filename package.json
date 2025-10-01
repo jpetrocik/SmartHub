@@ -12,18 +12,30 @@
     "cron": "^1.4.1",
     "debug": "^4.1.0",
     "didyoumean2": "^2.0.4",
-    "eiscp": "file:/home/john/Development/node-eiscp",
+    "eiscp": "file:/home/john/Development/personal/node-eiscp",
     "express": "^4.16.4",
     "firebase-admin": "^10.0.1",
-    "lgtv2": "file:/home/john/Development/lgtv2",
+    "lgtv2": "file:/home/john/Development/personal/lgtv2",
     "mqtt": "^4.3.0",
     "mysql": "^2.18.1",
-    "node-wol": "^0.1.1",
     "plivo": "^4.12.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "tplink-smarthome-api": "^4.2.0",
+    "wol": "^1.0.7"
   },
   "author": {
     "name": "John Petrocik"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lgtv2": "^1.4.5",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/mqtt": "^0.0.34",
+    "@types/node": "^24.5.2",
+    "@types/request": "^2.48.13",
+    "@types/wol": "^1.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
 }
