@@ -4,18 +4,19 @@
   "description": "Smart Hub Server",
   "main": "lib/server.js",
   "scripts": {
-    "start": "node lib/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server.js",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
     "cron": "^1.4.1",
     "debug": "^4.1.0",
     "didyoumean2": "^2.0.4",
-    "eiscp": "file:/home/john/Development/personal/node-eiscp",
+    "eiscp": "file:/home/john/Development/node-eiscp",
     "express": "^4.16.4",
     "firebase-admin": "^10.0.1",
-    "lgtv2": "file:/home/john/Development/personal/lgtv2",
+    "lgtv2": "file:/home/john/Development/lgtv2",
     "mqtt": "^4.3.0",
     "mysql": "^2.18.1",
     "plivo": "^4.12.0",
