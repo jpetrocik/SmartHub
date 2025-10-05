@@ -9,10 +9,14 @@ const eiscp = require('eiscp');
 // eiscp.on('debug', util.log);
 eiscp.on('error', util.log);
 
+export enum PowerState { STANDBY, ON }
+
+export enum InputSource { MYTHTV = "01", TV = "12" }
 
 export class OnkyoModule {
 	config: any;
 	connected = false;
+	powerState = PowerState.STANDBY;
 
 	constructor(config) {
 		this.config = config;
@@ -39,6 +43,7 @@ export class OnkyoModule {
 			eiscp.on('connect', (ipAddress, port, model) => {
 				console.log("Connected to " + model)
 				this.connected = true;
+				this.sendCommand("PWR", "QSTN");
 				resolve(true);
 			});
 
@@ -46,7 +51,16 @@ export class OnkyoModule {
 				this.connected = false;
 			});
 
-			// eiscp.connect();
+			eiscp.on('data', (data) => {
+				if (data.command == "PWR") {
+					if (data.data == "01") {
+						this.powerState = PowerState.ON;
+					} else {
+						this.powerState = PowerState.STANDBY;
+					}
+				}
+				console.log("Data recieved from reciever: " + JSON.stringify(data));
+			});
 		});
 	}
 
@@ -100,7 +114,7 @@ export class OnkyoModule {
 		}
 
 
-		(global.SmartHub.config.onkyo as OnkyoConfig[]).forEach((config) => {
+		(global.SmartHub.config.onkyo as OnkyoConfig[]).forEach(async (config) => {
 			const onkyoModule = new OnkyoModule(config);
 			onkyoModule.subscribe();
 

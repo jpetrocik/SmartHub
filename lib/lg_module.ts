@@ -50,6 +50,7 @@ export class LgWebOSModule {
 					this.lgtv.disconnect();
 					this.lgtv = undefined;
 					this.reties = 0;
+					return;
 				}
 				console.log('Connecting to TV...');
 			});

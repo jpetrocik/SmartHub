@@ -11,7 +11,7 @@ import ScheduleModule from './schedule_module.js';
 import NotificationModule from './notification_module.js';
 import { LgWebOSModule } from './lg_module.js';
 import { OnkyoModule } from './onkyo_module.js';
-import MythTvModule from './mythtv_module.js';
+import { MythTvModule } from './mythtv_module.js';
 import PirModule from './pir_module.js';
 import PlivoModule from './plivo_module.js';
 import FirebaseModule from './firebase_module.js';
