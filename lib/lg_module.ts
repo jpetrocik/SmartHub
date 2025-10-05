@@ -49,6 +49,7 @@ export class LgWebOSModule {
 					console.log("Max connection attempts exceeded, discounting");
 					this.lgtv.disconnect();
 					this.lgtv = undefined;
+					this.reties = 0;
 				}
 				console.log('Connecting to TV...');
 			});
