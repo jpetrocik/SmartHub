@@ -82,6 +82,7 @@ export class LgWebOSModule {
 			console.log("Ignoring request, TV is not ready.");
 			return;
 		}
+
 		return new Promise((resolve, reject) => {
 			this.lgtv.request("ssap://" + command, JSON.stringify(message), (err: Error | null, res: any) => {
 				if (err) {
@@ -94,14 +95,14 @@ export class LgWebOSModule {
 		});
 	}
 
-	async powerOn() {
+	powerOn() {
 		if (this.lgtv) {
 			console.log("TV already on");
 			return;
 		}
 
 		console.log("Sending WOL to " + this.config.macAddress);
-		return new Promise((resolve, reject) => {
+		return new Promise(async (resolve, reject) => {
 			wol.wake(this.config.macAddress, {}, async (err: any, res: any) => {
 				if (err) {
 					reject(err);
