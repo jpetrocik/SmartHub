@@ -10,7 +10,7 @@ import PseudoModule from './pseudo_module.js';
 import ScheduleModule from './schedule_module.js';
 import NotificationModule from './notification_module.js';
 import { LgWebOSModule } from './lg_module.js';
-import OnkyoModule from './onkyo_module.js';
+import { OnkyoModule } from './onkyo_module.js';
 import MythTvModule from './mythtv_module.js';
 import PirModule from './pir_module.js';
 import PlivoModule from './plivo_module.js';
@@ -36,16 +36,16 @@ class SmartHub {
 
 		await SunsetModule.init();
 		ScheduleModule.init();
-		await PseudoModule.init();
-		await NotificationModule.init();
+		PseudoModule.init();
+		NotificationModule.init();
 		LgWebOSModule.init();
-		await OnkyoModule.init();
-		await MythTvModule.init();
-		await PirModule.init();
-		await PlivoModule.init();
-		await FirebaseModule.init();
-		await MacModule.init();
-		await TPLinkModule.init();
+		OnkyoModule.init();
+		MythTvModule.init();
+		PirModule.init();
+		PlivoModule.init();
+		FirebaseModule.init();
+		MacModule.init();
+		TPLinkModule.init();
 		BridgeTopicModule.init();
 	}
 

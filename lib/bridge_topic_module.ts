@@ -60,7 +60,9 @@ export class BridgeTopicModule {
             return;
         }
 
-        return new BridgeTopicModule(global.SmartHub.config.bridge as Bridge[]);
+        let brige = new BridgeTopicModule(global.SmartHub.config.bridge as Bridge[]);
+
+        global.SmartHub.modules["bridgeTopicModule"] = brige;
     }
 }
 

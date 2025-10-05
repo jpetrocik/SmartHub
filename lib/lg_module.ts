@@ -164,12 +164,13 @@ export class LgWebOSModule {
 		}
 
 		(global.SmartHub.config.lg as LGConfig[]).forEach((config) => {
-			new LgWebOSModule(config);
+			global.SmartHub.modules[config.id] = new LgWebOSModule(config);
 		});
 	}
 }
 
 interface LGConfig {
+	id: string;
 	topic: string;
 	address: string;
 	macAddress: string;
