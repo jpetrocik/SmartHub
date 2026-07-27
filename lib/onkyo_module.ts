@@ -27,7 +27,7 @@ export class OnkyoModule {
 			console.log("eISCP Scanning....")
 
 			// Discover receviers on network, stop after 2 receviers or 5 seconds
-			eiscp.discover({ devices: this.config.length, timeout: 10 }, (err, result) => {
+			eiscp.discover({ devices: this.config.length, timeout: 10, address: "192.168.1.255" }, (err, result) => {
 
 				if (err) {
 					console.log("Error message: " + result);
